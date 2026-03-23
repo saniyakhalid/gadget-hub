@@ -140,6 +140,24 @@ export const getSingleProduct = handleAsyncError(async (req, res, next) => {
     })
 })
 
+// 5) Getting high discounted products (for Home page deals)
+export const getDiscountedProducts = handleAsyncError(async (req, res, next) => {
+    const minDiscount = Number(req.query.minDiscount) || 40;
+    const limit = Number(req.query.limit) || 10;
+
+    const products = await Product.find({
+        discountPercent: { $gte: minDiscount },
+        stock: { $gt: 0 }
+    })
+        .sort({ discountPercent: -1, createdAt: -1 })
+        .limit(limit);
+
+    res.status(200).json({
+        success: true,
+        products
+    })
+})
+
 // 6) Creating and Updating Review
 export const createReviewForProduct = handleAsyncError(async (req, res, next) => {
     const { rating, comment, productId } = req.body;

@@ -8,7 +8,7 @@
 
 .filter-section {
   flex: 0 0 250px;
-  background-color: var(--text-light);
+  background-color: var(--bg-secondary);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -37,12 +37,12 @@
 }
 
 .filter-section li:hover {
-  background-color: #efefef;
+  background-color: var(--bg-primary);
 }
 
 .filter-section li.active {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--primary-main);
+  color: var(--text-light);
   font-weight: bold;
 }
 

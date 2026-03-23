@@ -1,21 +1,22 @@
-:root { 
-    
-    --primary-main: #6C5B7B; 
-    --primary-dark: #4E4A59; 
-    --primary-light: #F8B5B1; 
-    
-    --bg-primary: #2E2E3C; 
-    --bg-secondary: #3B3B4F; 
-    
-    --text-primary: #EAE7E0; 
-    --text-secondary: #B9A7A0; 
-    --text-light: #FFFFFF; 
-    
-    --border-color: #5C4A6F; 
-    
+:root {
+    /* Theme palette derived from the provided "Gadget Hub" header image */
+    --primary-main: #f9e442;   /* gold */
+    --primary-dark: #561110;   /* deep maroon */
+    --primary-light: #fbec61;  /* lighter gold */
 
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2); 
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.15); 
+    --bg-primary: #1e100d;     /* deep maroon background */
+    --bg-secondary: #2c110f;   /* surface background */
+
+    --text-primary: #f8f8f8;    /* near-white */
+    --text-secondary: #d9ba41;  /* muted gold */
+    --text-light: #ffffff;
+
+    --text-dark: #1e100d; /* used in some existing styles */
+
+    --border-color: #814325; /* warm border */
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
 }
 *{
     margin:0;
