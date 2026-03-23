@@ -20,6 +20,23 @@ export const getProduct = createAsyncThunk('product/getProduct', async({keyword,
     }
 })
 
+// Home deals (high discounted products)
+export const getDiscountedProducts = createAsyncThunk(
+    'product/getDiscountedProducts',
+    async ({ minDiscount = 40, limit = 10 } = {}, { rejectWithValue }) => {
+        try {
+            const params = new URLSearchParams();
+            if (minDiscount !== undefined) params.set('minDiscount', minDiscount);
+            if (limit !== undefined) params.set('limit', limit);
+
+            const { data } = await axios.get(`/api/v1/products/discounted?${params.toString()}`);
+            return data;
+        } catch (error) {
+            return rejectWithValue(error.response?.data || 'An error occurred');
+        }
+    }
+);
+
 // Product details
 export const getProductDetails = createAsyncThunk('product/getProductDetails', async(id, {rejectWithValue})=>{
     try {
@@ -56,6 +73,10 @@ const productSlice = createSlice({
         product:null,
         resultsPerPage:4,
         totalPages:0,
+        discountedProducts: [],
+        discountedLoading: false,
+        discountedLoaded: false,
+        discountedError: null,
         reviewSuccess:false,
         reviewLoading:false
     },
@@ -85,6 +106,23 @@ const productSlice = createSlice({
             state.loading=false;
             state.error=action.payload || 'Something went wrong';
             state.products = [];
+        })
+
+        builder.addCase(getDiscountedProducts.pending, (state) => {
+            state.discountedLoading = true;
+            state.discountedError = null;
+        })
+        .addCase(getDiscountedProducts.fulfilled, (state, action) => {
+            state.discountedLoading = false;
+            state.discountedLoaded = true;
+            state.discountedError = null;
+            state.discountedProducts = action.payload.products || [];
+        })
+        .addCase(getDiscountedProducts.rejected, (state, action) => {
+            state.discountedLoading = false;
+            state.discountedLoaded = true;
+            state.discountedError = action.payload || 'Something went wrong';
+            state.discountedProducts = [];
         })
 
         builder.addCase(getProductDetails.pending, (state) => {

@@ -51,7 +51,7 @@ function Payment() {
           contact: shippingInfo.phoneNumber
         },
         theme: {
-          color: '#3399cc'  // #F37254
+          color: '#f9e442'  // gold theme
         },
       };
 

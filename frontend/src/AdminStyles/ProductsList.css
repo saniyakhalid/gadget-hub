@@ -1,6 +1,6 @@
 .product-list-container {
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: var(--bg-secondary);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     min-height: 100vh;
@@ -10,14 +10,14 @@
   .product-list-title {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--text-primary);
   }
   
   .product-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
-    background-color: #fff;
+    background-color: var(--bg-primary);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
@@ -25,19 +25,19 @@
   .product-table td {
     text-align: left;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
   }
   
   .product-table th {
     background-color: var(--bg-secondary);
-    color: #fff;
+    color: var(--text-light);
   }
   .admin-product-image{
     width:70px;
     height: 70px;
   }
   .product-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: var(--bg-primary);
   }
   
   .action-link {
@@ -63,27 +63,27 @@
   }
   
   .edit-icon:hover {
-    background-color: rgba(0, 123, 255, 0.1);
+    background-color: rgba(249, 228, 66, 0.12);
   }
   
   .delete-icon {
-    color: #f7364a;
+    color: var(--primary-main);
     border:none;
     background-color: transparent;
   }
   
   .delete-icon:hover {
-    background-color: rgba(220, 53, 69, 0.1);
-    color: #f66675;
+    background-color: rgba(86, 17, 16, 0.25);
+    color: var(--primary-light);
   }
   .no-admin-products{
     text-align: center;
     padding:30px;
-    background-color:#555; 
+    background-color: var(--primary-dark);
   }
 
   .loading-message {
     font-size: 18px;
-    color: #555;
+    color: var(--text-secondary);
   }
   

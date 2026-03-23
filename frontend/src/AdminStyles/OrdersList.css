@@ -1,6 +1,6 @@
 .ordersList-container {
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: var(--bg-secondary);
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     min-height: 70vh;
@@ -10,7 +10,7 @@
   .ordersList-title {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--text-primary);
   }
   
   .ordersList-table-container {
@@ -21,7 +21,7 @@
   .ordersList-table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #fff;
+    background-color: var(--bg-primary);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
@@ -29,26 +29,26 @@
   .ordersList-table td {
     text-align: left;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
   }
   
   .ordersList-table th {
     background-color: var(--bg-secondary);
-    color: #fff;
+    color: var(--text-light);
   }
   
   .ordersList-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: var(--bg-primary);
   }
   
   .order-status.processing {
-    background-color: rgba(255, 0, 0, 0.1); 
-    color: red;
+    background-color: rgba(249, 228, 66, 0.15);
+    color: var(--primary-main);
   }
   
   .order-status.delivered {
-    background-color: rgba(0, 255, 0, 0.1); 
-    color: green;
+    background-color: rgba(251, 236, 97, 0.15);
+    color: var(--primary-light);
   }
   
 
@@ -68,17 +68,17 @@
   }
   
   .edit-icon:hover {
-    background-color: rgba(0, 123, 255, 0.1);
+    background-color: rgba(249, 228, 66, 0.12);
   }
   
   .delete-icon {
-    color: #f7364a;
+    color: var(--primary-main);
     border: none;
   }
   
   .delete-icon:hover {
-    background-color: rgba(220, 53, 69, 0.1);
-    color: #f3253a;
+    background-color: rgba(86, 17, 16, 0.25);
+    color: var(--primary-light);
   }
   
 

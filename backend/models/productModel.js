@@ -15,6 +15,13 @@ const productSchema = new mongoose.Schema({
         required: [true, "Please Enter Product Price"],
         maxLength: [7, "Price cannot exceed 7 digits"]
     },
+    // Discount in percentage form, e.g. 20 means 20% OFF
+    discountPercent: {
+        type: Number,
+        default: 0,
+        min: [0, "Discount cannot be negative"],
+        max: [100, "Discount cannot exceed 100"]
+    },
     ratings: {
         type: Number,
         default: 0

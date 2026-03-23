@@ -1,0 +1,45 @@
+.discount-deals-wrap {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
+  margin: 0 auto 2rem auto;
+}
+
+.discount-deals-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.discount-deals-heading h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--primary-light);
+  text-shadow: var(--shadow-sm);
+}
+
+.discount-deals-carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.discount-deals-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.discount-deals-carousel::-webkit-scrollbar-thumb {
+  background: rgba(249, 228, 66, 0.35);
+  border-radius: 9999px;
+}
+
+.discount-deals-loading,
+.discount-deals-empty {
+  padding: 1rem 0;
+  color: var(--text-secondary);
+}
+

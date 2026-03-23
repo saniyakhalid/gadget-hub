@@ -16,6 +16,7 @@ function UpdateProduct() {
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
     const [stock, setStock] = useState("");
+    const [discountPercent, setDiscountPercent] = useState(0);
     const [image, setImage] = useState([]);
     const [oldImage, setOldImage] = useState([]);
     const [imagePreview, setImagePreview] = useState([]);
@@ -39,6 +40,7 @@ function UpdateProduct() {
             setDescription(product.description);
             setCategory(product.category);
             setStock(product.stock);
+            setDiscountPercent(product.discountPercent ?? 0);
             setOldImage(product.image);
         }
     }, [product])
@@ -68,6 +70,7 @@ function UpdateProduct() {
         myForm.set('description', description);
         myForm.set('category', category);
         myForm.set('stock', stock);
+        myForm.set('discountPercent', discountPercent);
         image.forEach((img) => {
             myForm.append('image', img);
         })
@@ -112,6 +115,20 @@ function UpdateProduct() {
 
                     <label htmlFor="stock">Product Stock</label>
                     <input type="number" className='update-product-input' required id='stock' name='stock' value={stock} onChange={(e) => setStock(e.target.value)} />
+
+                    <label htmlFor="discountPercent">Discount Percentage</label>
+                    <input
+                        type="number"
+                        className='update-product-input'
+                        required
+                        id='discountPercent'
+                        name='discountPercent'
+                        min={0}
+                        max={100}
+                        step={1}
+                        value={discountPercent}
+                        onChange={(e) => setDiscountPercent(e.target.value)}
+                    />
 
                     <label htmlFor="image">Product Images</label>
                     <div className="update-product-file-wrapper">

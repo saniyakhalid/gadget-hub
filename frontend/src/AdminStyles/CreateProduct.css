@@ -2,7 +2,7 @@
   max-width: 600px;
   margin: 100px auto 0;
   padding: 20px;
-  background-color: #fff;
+  background-color: var(--bg-secondary);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -23,9 +23,11 @@
 .form-select,
 .form-input-file {
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   font-size: 1rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .form-input:focus,
@@ -60,7 +62,7 @@
 .submit-btn {
   padding: 12px;
   background-color:var(--bg-secondary);
-  color: white;
+  color: var(--text-light);
   font-size: 1.2rem;
   border: none;
   border-radius: 5px;
@@ -73,7 +75,7 @@
 }
 
 .submit-btn:disabled {
-  background-color: #aaa;
+  background-color: var(--bg-primary);
   cursor: not-allowed;
 }
 

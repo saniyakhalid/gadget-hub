@@ -17,6 +17,7 @@ function CreateProduct() {
     const [description, setDescription] = useState("");
     const [category, setCategory] = useState("");
     const [stock, setStock] = useState("");
+    const [discountPercent, setDiscountPercent] = useState(0);
     const [image, setImage] = useState([]);
     const [imagePreview, setImagePreview] = useState([]);
 
@@ -29,6 +30,7 @@ function CreateProduct() {
         myForm.set('description', description);
         myForm.set('category', category);
         myForm.set('stock', stock);
+        myForm.set('discountPercent', discountPercent);
         image.forEach((img) => {
             myForm.append('image', img);
         })
@@ -88,6 +90,18 @@ function CreateProduct() {
                         }
                     </select>
                     <input type="number" className="form-input" placeholder='Enter Product Stock' required name='stock' value={stock} onChange={(e) => setStock(e.target.value)} />
+                    <input
+                        type="number"
+                        className="form-input"
+                        placeholder='Enter Discount Percentage'
+                        required
+                        min={0}
+                        max={100}
+                        step={1}
+                        name='discountPercent'
+                        value={discountPercent}
+                        onChange={(e) => setDiscountPercent(e.target.value)}
+                    />
                     <div className="file-input-container">
                         <input type="file" accept='image/' className='form-input-file' multiple name='image' onChange={createProductImage} />
                     </div>

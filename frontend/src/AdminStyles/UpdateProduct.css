@@ -3,7 +3,7 @@
     width: 700px;
     margin: 40px auto;
     padding: 32px;
-    background: #fff;
+    background: var(--bg-secondary);
     border-radius: 16px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
@@ -11,7 +11,7 @@
   .update-product-title {
     font-size: 28px;
     font-weight: 600;
-    color: #111827;
+    color: var(--text-primary);
     text-align: center;
     margin-bottom: 40px;
   }
@@ -30,7 +30,7 @@
     display: block;
     font-weight: 500;
     font-size: 17px;
-    color: var(--bg-secondary);
+    color: var(--text-secondary);
     margin-bottom: 8px;
   }
   
@@ -38,14 +38,20 @@
   .update-product-textarea {
     width: 90%;
     padding: 12px 16px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     margin:0 0 30px 0;
+    background: var(--bg-primary);
+    color: var(--text-primary);
   }
   .update-product-select{
     width: 94%;
     padding: 12px 16px;
     margin:0 auto 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
   }
   .update-product-textarea {
     height: 120px;
@@ -61,7 +67,7 @@
     width: 100%;
     max-width: 720px;
     padding: 12px;
-    border: 2px dashed #e5e7eb;
+    border: 2px dashed var(--border-color);
     border-radius: 8px;
   }
   
@@ -80,7 +86,7 @@
     height: 100px;
     object-fit: cover;
     border-radius: 8px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--border-color);
   }
   
   .update-product-submit-btn {
@@ -88,7 +94,7 @@
     max-width: 720px;
     height: 48px;
     background: var(--bg-secondary);
-    color: white;
+    color: var(--text-light);
     border: none;
     border-radius: 8px;
     font-size: 16px;
